@@ -1,69 +1,20 @@
-/* ============================================================
-   JAY'S HEADER — Navigation bar styling
-   Targets vibes/soul Navigation primitive via global CSS.
-   ============================================================ */
 
-/* Main nav bar background — olive */
 [class*='Navigation_navigation'] {
-  background-color: var(--jays-olive) !important;
+  background-color: var(--jays-olive);
   border-radius: 6px;
 }
-
-/* Nav links — light text on olive */
 [class*='Navigation_link'] {
-  color: rgba(255, 255, 255, 0.85) !important;
-  font-family: var(--font-family-body);
+  color: rgba(255,255,255,0.85);
   font-size: 0.875rem;
   font-weight: 500;
-  letter-spacing: 0.02em;
 }
-
 [class*='Navigation_link']:hover {
-  color: var(--jays-gold) !important;
+  color: var(--jays-gold);
 }
-
-/* Active nav link */
-[class*='Navigation_link'][aria-current='page'] {
-  color: var(--jays-gold) !important;
-}
-
-/* Logo area */
-[class*='Navigation_logo'] {
-  color: #ffffff !important;
-}
-
-/* Cart, account, search icons */
 [class*='Navigation_icon'] {
-  color: rgba(255, 255, 255, 0.85) !important;
+  color: rgba(255,255,255,0.85);
 }
-
 [class*='Navigation_icon']:hover {
-  color: var(--jays-gold) !important;
+  color: var(--jays-gold);
 }
-
-/* Dropdown menus */
-[class*='Navigation_dropdown'],
-[class*='Navigation_menu'] {
-  background-color: var(--jays-olive-light) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-}
-
-[class*='Navigation_dropdown'] a,
-[class*='Navigation_menu'] a {
-  color: rgba(255, 255, 255, 0.8) !important;
-}
-
-[class*='Navigation_dropdown'] a:hover,
-[class*='Navigation_menu'] a:hover {
-  color: var(--jays-gold) !important;
-  background-color: rgba(242, 216, 79, 0.08) !important;
-}
-
-/* Headroom wrapper — remove the white padding gap */
-.headroom-wrapper {
-  z-index: 50;
-}
-
-.headroom {
-  z-index: 50 !important;
-}
+.headroom { z-index: 50; }
