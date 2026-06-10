@@ -1,0 +1,175 @@
+/* ============================================================
+   JAY'S HERO
+   Signature: three-color vertical accent bar (gold/orange/red)
+   pulled from the logo — grounds the hero to the brand without
+   requiring a hero image.
+   ============================================================ */
+
+.jays-hero {
+  position: relative;
+  background-color: var(--jays-olive);
+  min-height: 540px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .jays-hero {
+    min-height: 640px;
+  }
+}
+
+/* Three-color left accent bar */
+.jays-accent-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .jays-accent-bar { width: 8px; }
+}
+
+.jays-accent-bar__gold   { flex: 1; background: var(--jays-gold); }
+.jays-accent-bar__orange { flex: 1; background: var(--jays-orange); }
+.jays-accent-bar__red    { flex: 1; background: var(--jays-red); }
+
+/* Inner layout */
+.jays-hero__inner {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 64px 24px 64px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+@media (min-width: 768px) {
+  .jays-hero__inner {
+    padding: 96px 48px 96px 64px;
+  }
+}
+
+/* Eyebrow */
+.jays-hero__eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--jays-gold);
+  margin-bottom: 14px;
+}
+
+/* Headline */
+.jays-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.02;
+  color: #ffffff;
+  max-width: 14ch;
+  margin: 0 0 20px;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+/* Subtitle */
+.jays-hero__subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 50ch;
+  line-height: 1.65;
+  margin: 0 0 36px;
+}
+
+/* CTA buttons */
+.jays-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.jays-hero__cta-primary {
+  display: inline-flex;
+  align-items: center;
+  padding: 13px 30px;
+  background: var(--jays-orange);
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: var(--radius);
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.jays-hero__cta-primary:hover {
+  background: var(--jays-orange-dark);
+  transform: translateY(-1px);
+}
+
+.jays-hero__cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 13px 22px;
+  color: rgba(255, 255, 255, 0.75);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.jays-hero__cta-secondary:hover {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+/* Department quick-links strip */
+.jays-hero__departments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.jays-hero__dept-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius);
+  color: rgba(255, 255, 255, 0.8);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.jays-hero__dept-link:hover {
+  background: rgba(242, 216, 79, 0.12);
+  border-color: var(--jays-gold);
+  color: var(--jays-gold);
+}
+
+.jays-hero__dept-icon {
+  font-size: 1rem;
+  line-height: 1;
+}

@@ -11,7 +11,8 @@ import { productCardTransformer } from '~/data-transformers/product-card-transfo
 import { getPreferredCurrencyCode } from '~/lib/currency';
 import { getMetadataAlternates } from '~/lib/seo/canonical';
 
-import { Slideshow } from './_components/slideshow';
+import { JaysHero } from './_components/jays-hero';
+import './_components/jays-hero/hero.css';
 import { getPageData } from './page-data';
 
 interface Props {
@@ -43,12 +44,9 @@ export default async function Home({ params }: Props) {
 
   const streamableFeaturedProducts = Streamable.from(async () => {
     const data = await streamablePageData;
-
     const featuredProducts = removeEdgesAndNodes(data.site.featuredProducts);
-
     const { defaultOutOfStockMessage, showOutOfStockMessage, showBackorderMessage } =
       data.site.settings?.inventory ?? {};
-
     return productCardTransformer(
       featuredProducts,
       format,
@@ -59,12 +57,9 @@ export default async function Home({ params }: Props) {
 
   const streamableNewestProducts = Streamable.from(async () => {
     const data = await streamablePageData;
-
     const newestProducts = removeEdgesAndNodes(data.site.newestProducts);
-
     const { defaultOutOfStockMessage, showOutOfStockMessage, showBackorderMessage } =
       data.site.settings?.inventory ?? {};
-
     return productCardTransformer(
       newestProducts,
       format,
@@ -75,15 +70,13 @@ export default async function Home({ params }: Props) {
 
   const streamableShowNewsletterSignup = Streamable.from(async () => {
     const data = await streamablePageData;
-
     const { showNewsletterSignup } = data.site.settings?.newsletter ?? {};
-
     return showNewsletterSignup;
   });
 
   return (
     <>
-      <Slideshow />
+      <JaysHero />
 
       <FeaturedProductList
         cta={{ label: t('FeaturedProducts.cta'), href: '/shop-all' }}
