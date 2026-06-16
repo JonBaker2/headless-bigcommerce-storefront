@@ -1,0 +1,231 @@
+/* ═══════════════════════════════════════════════
+   DEPARTMENT GRID
+   ═══════════════════════════════════════════════ */
+
+.dept-grid {
+  background: var(--jays-cream, #f7f5f0);
+  padding: 88px 0;
+}
+
+.dept-grid__inner {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.dept-grid__header {
+  margin-bottom: 48px;
+}
+
+/* ── 3×2 tile grid ── */
+.dept-grid__tiles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 300px);
+  gap: 10px;
+}
+
+/* ── Individual tile ── */
+.dept-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 28px;
+  text-decoration: none;
+  overflow: hidden;
+  border-radius: 4px;
+  transition: transform 0.28s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+.dept-tile:hover {
+  transform: translateY(-4px);
+}
+
+/* Background gradient layer */
+.dept-tile__bg {
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.28s ease;
+}
+
+/* Per-department gradients */
+.dept-tile--firearms { background: #161613; }
+.dept-tile--firearms .dept-tile__bg {
+  background: linear-gradient(
+    140deg,
+    rgba(20,20,18,0.0) 0%,
+    rgba(52,48,34,0.55) 100%
+  );
+}
+.dept-tile--firearms::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 70% 50%, rgba(52,48,34,0.5) 0%, transparent 70%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cline x1='40' y1='0' x2='40' y2='80' stroke='rgba(255,255,255,0.03)' stroke-width='1'/%3E%3Cline x1='0' y1='40' x2='80' y2='40' stroke='rgba(255,255,255,0.03)' stroke-width='1'/%3E%3Ccircle cx='40' cy='40' r='30' stroke='rgba(255,255,255,0.03)' fill='none' stroke-width='1'/%3E%3Ccircle cx='40' cy='40' r='16' stroke='rgba(255,255,255,0.025)' fill='none' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: auto, 80px 80px;
+}
+
+.dept-tile--fishing { background: #091929; }
+.dept-tile--fishing .dept-tile__bg {
+  background: linear-gradient(140deg, rgba(9,25,41,0.0) 0%, rgba(16,52,88,0.5) 100%);
+}
+.dept-tile--fishing::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='60'%3E%3Cpath d='M0 30 Q30 10 60 30 T120 30' stroke='rgba(255,255,255,0.035)' fill='none' stroke-width='1.5'/%3E%3Cpath d='M0 50 Q30 30 60 50 T120 50' stroke='rgba(255,255,255,0.02)' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-size: 120px 60px;
+}
+
+.dept-tile--hunting { background: #0d1a0b; }
+.dept-tile--hunting .dept-tile__bg {
+  background: linear-gradient(140deg, rgba(13,26,11,0.0) 0%, rgba(30,58,24,0.5) 100%);
+}
+.dept-tile--hunting::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 5 L20 20 L10 18 L18 30 L10 42 L20 40 L30 55 L40 40 L50 42 L42 30 L50 18 L40 20 Z' stroke='rgba(255,255,255,0.03)' fill='none' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 60px 60px;
+}
+
+.dept-tile--archery { background: #1c0f08; }
+.dept-tile--archery .dept-tile__bg {
+  background: linear-gradient(140deg, rgba(28,15,8,0.0) 0%, rgba(68,34,14,0.5) 100%);
+}
+.dept-tile--archery::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ccircle cx='40' cy='40' r='35' stroke='rgba(255,255,255,0.04)' fill='none' stroke-width='1'/%3E%3Ccircle cx='40' cy='40' r='22' stroke='rgba(255,255,255,0.03)' fill='none' stroke-width='1'/%3E%3Ccircle cx='40' cy='40' r='10' stroke='rgba(255,255,255,0.025)' fill='none' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 80px 80px;
+}
+
+.dept-tile--camping { background: #18120c; }
+.dept-tile--camping .dept-tile__bg {
+  background: linear-gradient(140deg, rgba(24,18,12,0.0) 0%, rgba(60,40,22,0.5) 100%);
+}
+.dept-tile--camping::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 5 L58 55 L2 55 Z' stroke='rgba(255,255,255,0.035)' fill='none' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 60px 60px;
+}
+
+.dept-tile--optics { background: #0b0e18; }
+.dept-tile--optics .dept-tile__bg {
+  background: linear-gradient(140deg, rgba(11,14,24,0.0) 0%, rgba(24,30,58,0.5) 100%);
+}
+.dept-tile--optics::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cline x1='0' y1='0' x2='40' y2='40' stroke='rgba(255,255,255,0.025)' stroke-width='1'/%3E%3Cline x1='40' y1='0' x2='0' y2='40' stroke='rgba(255,255,255,0.025)' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 40px 40px;
+}
+
+/* ── Large icon in corner ── */
+.dept-tile__icon-wrap {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  color: rgba(255,255,255,0.1);
+  transition: color 0.28s ease, transform 0.28s ease;
+  z-index: 1;
+}
+.dept-tile:hover .dept-tile__icon-wrap {
+  color: rgba(242,216,79,0.6);
+  transform: scale(1.08) rotate(-3deg);
+}
+
+/* ── Text content ── */
+.dept-tile__content {
+  position: relative;
+  z-index: 2;
+}
+
+.dept-tile__name {
+  font-family: var(--font-family-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+  margin: 0 0 4px;
+  line-height: 1;
+  transition: color 0.18s ease;
+}
+
+.dept-tile__desc {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.52);
+  margin: 0 0 14px;
+  letter-spacing: 0.02em;
+  transition: color 0.18s ease;
+}
+.dept-tile:hover .dept-tile__desc {
+  color: rgba(255,255,255,0.7);
+}
+
+.dept-tile__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-family-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--jays-gold);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+.dept-tile:hover .dept-tile__cta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Gold bottom accent bar ── */
+.dept-tile__bar {
+  position: absolute;
+  left: 0; bottom: 0;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, var(--jays-gold), var(--jays-orange));
+  transition: width 0.32s cubic-bezier(0.25,0.46,0.45,0.94);
+  z-index: 3;
+}
+.dept-tile:hover .dept-tile__bar {
+  width: 100%;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .dept-grid__tiles {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 260px);
+  }
+}
+
+@media (max-width: 680px) {
+  .dept-grid {
+    padding: 56px 0;
+  }
+  .dept-grid__inner {
+    padding: 0 16px;
+  }
+  .dept-grid__tiles {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 200px);
+    gap: 8px;
+  }
+  .dept-tile__name { font-size: 1.2rem; }
+  .dept-tile__desc { display: none; }
+  .dept-tile__icon-wrap { top: 14px; right: 14px; }
+  .dept-tile__icon-wrap svg { width: 36px; height: 36px; }
+}

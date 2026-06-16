@@ -64,13 +64,133 @@
   --jays-gold-dark:   #d4b92e;
   --jays-olive:       #343022;
   --jays-olive-light: #4a4530;
+  --jays-olive-deep:  #1e1c14;
+  --jays-cream:       #f7f5f0;
+  --jays-cream-dark:  #ede9e0;
 }
+
+/* ── Smooth scroll & selection ── */
+html { scroll-behavior: smooth; }
+::selection { background: var(--jays-gold); color: var(--jays-olive); }
+
+/* ── Custom scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f0ede8; }
+::-webkit-scrollbar-thumb { background: var(--jays-olive-light); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--jays-olive); }
 
 /* ── Global base overrides ── */
 body {
   font-family: var(--font-family-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-family-heading);
+}
+
+/* ── Animation keyframes ── */
+@keyframes jays-fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes jays-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes jays-slide-right {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* ── Section eyebrow utility ── */
+.jays-eyebrow {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--jays-orange);
+  margin-bottom: 10px;
+}
+
+/* ── Section header block ── */
+.jays-section-header {
+  margin-bottom: 48px;
+}
+.jays-section-title {
+  font-family: var(--font-family-heading);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--jays-olive);
+  line-height: 1.05;
+  margin: 0;
+}
+.jays-section-title--light { color: #ffffff; }
+
+/* ── Button base ── */
+.jays-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-family-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 3px;
+  transition: all 0.18s ease;
+  cursor: pointer;
+  border: none;
+}
+.jays-btn--primary {
+  background: var(--jays-orange);
+  color: #ffffff;
+}
+.jays-btn--primary:hover {
+  background: var(--jays-orange-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(239,113,46,0.35);
+}
+.jays-btn--ghost {
+  background: transparent;
+  color: rgba(255,255,255,0.8);
+  border: 1px solid rgba(255,255,255,0.25);
+}
+.jays-btn--ghost:hover {
+  color: #ffffff;
+  border-color: rgba(255,255,255,0.6);
+}
+.jays-btn--outline-dark {
+  background: transparent;
+  color: var(--jays-olive);
+  border: 2px solid var(--jays-olive);
+}
+.jays-btn--outline-dark:hover {
+  background: var(--jays-olive);
+  color: #ffffff;
+}
+
+/* ── Divider accent ── */
+.jays-divider {
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--jays-gold), var(--jays-orange));
+  border-radius: 2px;
+  margin: 14px 0 24px;
+}
+
+/* ── Card hover lift ── */
+.jays-card-lift {
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.jays-card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
 }

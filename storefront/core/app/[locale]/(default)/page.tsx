@@ -11,8 +11,12 @@ import { productCardTransformer } from '~/data-transformers/product-card-transfo
 import { getPreferredCurrencyCode } from '~/lib/currency';
 import { getMetadataAlternates } from '~/lib/seo/canonical';
 
+import { DepartmentGrid } from './_components/department-grid';
+import './_components/department-grid/department-grid.css';
 import { JaysHero } from './_components/jays-hero';
 import './_components/jays-hero/hero.css';
+import { JaysTrust } from './_components/jays-trust';
+import './_components/jays-trust/trust.css';
 import { getPageData } from './page-data';
 
 interface Props {
@@ -76,8 +80,13 @@ export default async function Home({ params }: Props) {
 
   return (
     <>
+      {/* 1 — Brand hero */}
       <JaysHero />
 
+      {/* 2 — Department category tiles */}
+      <DepartmentGrid />
+
+      {/* 3 — Featured products (from BigCommerce "featured" flag) */}
       <FeaturedProductList
         cta={{ label: t('FeaturedProducts.cta'), href: '/shop-all' }}
         description={t('FeaturedProducts.description')}
@@ -87,6 +96,10 @@ export default async function Home({ params }: Props) {
         title={t('FeaturedProducts.title')}
       />
 
+      {/* 4 — Why Jay's trust section */}
+      <JaysTrust />
+
+      {/* 5 — New arrivals carousel */}
       <FeaturedProductCarousel
         cta={{ label: t('NewestProducts.cta'), href: '/shop-all/?sort=newest' }}
         description={t('NewestProducts.description')}
@@ -98,6 +111,7 @@ export default async function Home({ params }: Props) {
         title={t('NewestProducts.title')}
       />
 
+      {/* 6 — Newsletter */}
       <Stream fallback={null} value={streamableShowNewsletterSignup}>
         {(showNewsletterSignup) => showNewsletterSignup && <Subscribe />}
       </Stream>

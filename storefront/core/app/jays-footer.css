@@ -1,0 +1,108 @@
+/* ═══════════════════════════════════════════════
+   JAY'S FOOTER  —  Dark olive footer
+   ═══════════════════════════════════════════════ */
+
+/* ── Footer wrapper ── */
+[class*='Footer_footer'],
+footer[class*='Footer'] {
+  background: var(--jays-olive-deep, #1e1c14) !important;
+  border-top: 3px solid var(--jays-gold) !important;
+  color: rgba(255,255,255,0.65) !important;
+}
+
+/* ── Footer section headings ── */
+[class*='Footer'] h3,
+[class*='Footer'] [class*='heading'],
+[class*='Footer_section'] h3 {
+  font-family: var(--font-family-heading) !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  color: var(--jays-gold) !important;
+  margin-bottom: 16px !important;
+}
+
+/* ── Footer links ── */
+[class*='Footer'] a,
+[class*='Footer_link'] {
+  color: rgba(255,255,255,0.55) !important;
+  font-size: 0.85rem !important;
+  transition: color 0.18s ease !important;
+  text-decoration: none !important;
+}
+[class*='Footer'] a:hover,
+[class*='Footer_link']:hover {
+  color: var(--jays-gold) !important;
+}
+
+/* ── Logo / brand in footer ── */
+[class*='Footer'] [class*='logo'],
+[class*='Footer'] [class*='Logo'] {
+  color: #ffffff !important;
+  font-family: var(--font-family-heading) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  font-size: 1.1rem !important;
+  letter-spacing: 0.06em !important;
+}
+
+/* ── Copyright text ── */
+[class*='Footer'] [class*='copyright'],
+[class*='Footer'] small {
+  color: rgba(255,255,255,0.3) !important;
+  font-size: 0.75rem !important;
+}
+
+/* ── Payment icons ── */
+[class*='Footer'] [class*='payment'],
+[class*='PaymentIcons'] {
+  opacity: 0.5 !important;
+  filter: grayscale(1) brightness(1.5) !important;
+}
+
+/* ── Social icons ── */
+[class*='Footer'] [class*='social'],
+[class*='SocialIcons'] {
+  color: rgba(255,255,255,0.5) !important;
+}
+[class*='Footer'] [class*='social'] a:hover,
+[class*='SocialIcons'] a:hover {
+  color: var(--jays-gold) !important;
+}
+
+/* ── Divider ── */
+[class*='Footer'] hr,
+[class*='Footer_divider'] {
+  border-color: rgba(255,255,255,0.08) !important;
+}
+
+/* ── Newsletter input in footer ── */
+[class*='Footer'] input[type='email'],
+[class*='Subscribe'] input {
+  background: rgba(255,255,255,0.06) !important;
+  border-color: rgba(255,255,255,0.15) !important;
+  color: #ffffff !important;
+  border-radius: 3px !important;
+}
+[class*='Footer'] input::placeholder,
+[class*='Subscribe'] input::placeholder {
+  color: rgba(255,255,255,0.35) !important;
+}
+
+/* ── Subscribe button ── */
+[class*='Subscribe'] button,
+[class*='Footer'] button[type='submit'] {
+  background: var(--jays-orange) !important;
+  color: #ffffff !important;
+  font-family: var(--font-family-heading) !important;
+  font-size: 0.8rem !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  border-radius: 3px !important;
+  transition: background 0.18s ease !important;
+}
+[class*='Subscribe'] button:hover,
+[class*='Footer'] button[type='submit']:hover {
+  background: var(--jays-orange-dark) !important;
+}

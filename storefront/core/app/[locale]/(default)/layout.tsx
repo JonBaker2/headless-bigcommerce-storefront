@@ -1,6 +1,8 @@
 import { setRequestLocale } from 'next-intl/server';
 import { PropsWithChildren } from 'react';
 
+import '~/app/jays-header.css';
+import '~/app/jays-footer.css';
 import { Footer } from '~/components/footer';
 import { Header } from '~/components/header';
 
