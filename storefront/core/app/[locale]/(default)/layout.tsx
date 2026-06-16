@@ -3,6 +3,7 @@ import { PropsWithChildren } from 'react';
 
 import '~/app/jays-header.css';
 import '~/app/jays-footer.css';
+import '~/app/jays-products.css';
 import { Footer } from '~/components/footer';
 import { Header } from '~/components/header';
 

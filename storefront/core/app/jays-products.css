@@ -1,0 +1,192 @@
+/* ═══════════════════════════════════════════════
+   JAY'S PRODUCT CARDS & LISTING PAGES
+   ═══════════════════════════════════════════════ */
+
+/* ── Product card container ── */
+[class*='ProductCard'],
+[class*='product-card'] {
+  border-radius: 4px !important;
+  overflow: hidden;
+  transition: transform 0.22s ease, box-shadow 0.22s ease !important;
+  border: 1px solid rgba(0,0,0,0.06) !important;
+}
+[class*='ProductCard']:hover,
+[class*='product-card']:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.1) !important;
+}
+
+/* ── Product image wrapper ── */
+[class*='ProductCard'] [class*='image'],
+[class*='ProductCard'] figure,
+[class*='ProductCard'] img {
+  transition: transform 0.32s ease !important;
+}
+[class*='ProductCard']:hover [class*='image'],
+[class*='ProductCard']:hover figure,
+[class*='ProductCard']:hover img {
+  transform: scale(1.04) !important;
+}
+
+/* ── Product name ── */
+[class*='ProductCard'] [class*='name'],
+[class*='ProductCard'] h3,
+[class*='ProductCard'] [class*='title'] {
+  font-family: var(--font-family-heading) !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  color: var(--jays-olive) !important;
+  line-height: 1.3 !important;
+}
+
+/* ── Price ── */
+[class*='ProductCard'] [class*='price'],
+[class*='ProductCard'] [class*='Price'] {
+  font-family: var(--font-family-heading) !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  color: var(--jays-olive) !important;
+}
+
+/* Sale price */
+[class*='ProductCard'] [class*='sale'],
+[class*='ProductCard'] [class*='Sale'] {
+  color: var(--jays-red) !important;
+}
+
+/* ── Add to cart button on hover ── */
+[class*='ProductCard'] button[class*='cart'],
+[class*='ProductCard'] [class*='AddToCart'] {
+  background: var(--jays-orange) !important;
+  color: #ffffff !important;
+  font-family: var(--font-family-heading) !important;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  border-radius: 3px !important;
+  transition: background 0.18s ease !important;
+}
+[class*='ProductCard'] button[class*='cart']:hover,
+[class*='ProductCard'] [class*='AddToCart']:hover {
+  background: var(--jays-orange-dark) !important;
+}
+
+/* ── Featured product list section ── */
+[class*='FeaturedProductList'],
+[class*='featured-product-list'] {
+  background: #ffffff !important;
+  padding: 80px 0 !important;
+}
+
+/* Section title overrides to match Jay's style */
+[class*='FeaturedProductList'] [class*='title'],
+[class*='FeaturedProductList'] h2 {
+  font-family: var(--font-family-heading) !important;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  color: var(--jays-olive) !important;
+  letter-spacing: 0.01em !important;
+}
+
+/* ── Carousel section ── */
+[class*='FeaturedProductCarousel'],
+[class*='featured-product-carousel'] {
+  background: var(--jays-cream, #f7f5f0) !important;
+  padding: 80px 0 !important;
+}
+
+[class*='FeaturedProductCarousel'] [class*='title'],
+[class*='FeaturedProductCarousel'] h2 {
+  font-family: var(--font-family-heading) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  color: var(--jays-olive) !important;
+}
+
+/* Carousel nav buttons */
+[class*='FeaturedProductCarousel'] button[class*='prev'],
+[class*='FeaturedProductCarousel'] button[class*='next'],
+[class*='Carousel'] [class*='button'] {
+  background: var(--jays-olive) !important;
+  color: #ffffff !important;
+  border-radius: 50% !important;
+  transition: background 0.18s ease !important;
+}
+[class*='FeaturedProductCarousel'] button:hover,
+[class*='Carousel'] [class*='button']:hover {
+  background: var(--jays-orange) !important;
+}
+
+/* ── Category page header ── */
+[class*='CategoryPageHeader'],
+[class*='category-header'] {
+  background: var(--jays-olive) !important;
+  color: #ffffff !important;
+  padding: 48px 0 !important;
+}
+
+[class*='CategoryPageHeader'] h1,
+[class*='category-header'] h1 {
+  font-family: var(--font-family-heading) !important;
+  font-size: clamp(2rem, 5vw, 3.5rem) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  color: #ffffff !important;
+}
+
+/* ── Breadcrumbs ── */
+[class*='Breadcrumb'] {
+  font-size: 0.8rem !important;
+  color: rgba(0,0,0,0.45) !important;
+}
+[class*='Breadcrumb'] a {
+  color: var(--jays-olive) !important;
+}
+[class*='Breadcrumb'] a:hover {
+  color: var(--jays-orange) !important;
+}
+
+/* ── Sort/filter controls ── */
+[class*='Sort'] select,
+[class*='sort'] select {
+  border-color: rgba(0,0,0,0.15) !important;
+  font-size: 0.85rem !important;
+  border-radius: 3px !important;
+}
+
+/* ── CTA links in sections ── */
+[class*='FeaturedProduct'] a[class*='cta'],
+[class*='FeaturedProduct'] a[class*='Cta'] {
+  font-family: var(--font-family-heading) !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: var(--jays-orange) !important;
+  border-color: var(--jays-orange) !important;
+}
+[class*='FeaturedProduct'] a[class*='cta']:hover,
+[class*='FeaturedProduct'] a[class*='Cta']:hover {
+  background: var(--jays-orange) !important;
+  color: #ffffff !important;
+}
+
+/* ── Subscribe / newsletter section ── */
+[class*='Subscribe'] {
+  background: var(--jays-olive-deep, #1e1c14) !important;
+  border-top: none !important;
+}
+[class*='Subscribe'] h2,
+[class*='Subscribe'] [class*='title'] {
+  font-family: var(--font-family-heading) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  color: #ffffff !important;
+}
+[class*='Subscribe'] p,
+[class*='Subscribe'] [class*='description'] {
+  color: rgba(255,255,255,0.55) !important;
+}
